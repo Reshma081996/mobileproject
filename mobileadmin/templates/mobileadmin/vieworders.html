@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<title>My Orders</title>
+{%extends 'mobileadmin/index1.html'%}
+{%block body_block%}
+<table class="table table-light" style="color:blue;">
+    <tr>
+
+        <td>Product</td>
+        <td>Price</td>
+        <td>Specificaton</td>
+        <td>Address</td>
+        <td>Status</td>
+
+    </tr>
+    {%for orders in order%}
+    <tr>
+
+        <td>{{orders.product.product_name}}</td>
+        <td>{{orders.product.price}}</td>
+        <td>{{orders.product.specs}}</td>
+         <td>{{orders.address}}</td>
+        <td>{{orders.status}}</td>
+        {%if orders.status != 'Cancelled'%}
+        <td><a href="{%url 'cancelorder' orders.id%}">Cancel Order</a></td>
+        {% endif %}
+
+
+    </tr>
+    {%endfor%}
+</table>
+{%endblock%}

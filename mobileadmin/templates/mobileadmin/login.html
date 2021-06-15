@@ -1,0 +1,23 @@
+
+{% extends 'mobileadmin/base.html' %}
+
+{% block body_block %}
+
+
+
+<form action="" class="border border-light p-5" method="post"
+      style=" width:600px;margin-left:450px;">
+    {% csrf_token %}
+    <h1 style="text-align:center">Login</h1>
+    {{form.as_table}}
+
+    <button class="btn btn-info btn-block my-4" type="submit">Sign In</button>
+
+<div class="text-center">
+        <p>Not a member?
+            <a href="{%url 'register'%}">Register</a>
+        </p></div>
+</form>
+
+
+    {% endblock %}

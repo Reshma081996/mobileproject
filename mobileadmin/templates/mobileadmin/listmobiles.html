@@ -1,0 +1,30 @@
+{% extends 'mobileadmin/index.html'%}
+{% block body_block %}
+
+<div class="row row-cols-1 row-cols-md-6 g-4 ">
+    {% for mobile in mobiles%}
+
+    <div class="card-deck"style="padding:30px";>
+        <div class="card text-center">
+      <img
+        src="{{mobile.image.url}}"
+        class="card-img-top"
+        alt="..."
+      />
+      <div class="card-block">
+        <h5 class="card-title">{{mobile.product_name}}</h5>
+          <h5 class="card-title">{{mobile.price}}</h5>
+<!--        <p class="card-text">-->
+<!--          {{mobile.specs}}-->
+        </p>
+        <a href="{%url 'mobileview' mobile.id%}" class="btn btn-primary">Buy Now</a>
+
+
+      </div>
+        </div>
+    </div>
+    {% endfor %}
+  </div>
+
+
+ {% endblock %}

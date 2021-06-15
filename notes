@@ -1,0 +1,12 @@
+once u create a model , return def__str__()
+makemigrations: -> create a makemigrationfile that contain equavlent converted queries corresponding to databas connected
+migrate:-> to excute queries
+
+python manage.py createsuperuser
+#username=luminar
+#pwd=luminar123
+#emai->luminar@gmail.com
+
+
+to use this model by superuser/admin _>register in admin.py
+create forms based on model if required
